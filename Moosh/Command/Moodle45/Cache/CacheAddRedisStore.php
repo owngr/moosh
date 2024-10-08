@@ -55,7 +55,8 @@ class CacheAddRedisStore extends MooshCommand {
         $data->compressor = 0;
 
         #TODO fix if it does not exist
-        $config = \cache_administration_helper::get_store_configuration_from_data($data);
+        $adminhelper = \core_cache\factory::instance()->get_administration_display_helper();
+        $config = $adminhelper->get_store_configuration_from_data($data);
 
         $writer = \core_cache\config_writer::instance();
 
