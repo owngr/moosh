@@ -53,8 +53,10 @@ class CacheAddRedisStore extends MooshCommand {
         $data->prefix = $options['key-prefix'];
         $data->serializer = 1;
         $data->compressor = 0;
+	$data->encryption = 0;
+        $data->cafile = null;
+        $data->clustermode = 0;
 
-        #TODO fix if it does not exist
         $adminhelper = \core_cache\factory::instance()->get_administration_display_helper();
         $config = $adminhelper->get_store_configuration_from_data($data);
 
