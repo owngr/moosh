@@ -98,4 +98,8 @@ class CacheEditMappings extends MooshCommand {
 
         exit(0);
     }
+
+    public function bootstrapLevel() {
+        return self::$BOOTSTRAP_FULL_NO_ADMIN_CHECK;
+    }
 }
